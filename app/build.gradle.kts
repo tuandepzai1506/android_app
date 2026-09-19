@@ -19,20 +19,17 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
-    // Retrofit & Gson (Gọi API và parse JSON)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // OkHttp logging (tùy chọn, để in chi tiết gói tin gọi đi)
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.google.firebase:firebase-admin:9.2.0")
 
     testImplementation(kotlin("test"))
-    // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    // This dependency is used by the application.
     implementation(libs.guava)
 }
 
