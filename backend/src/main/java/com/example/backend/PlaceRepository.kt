@@ -7,9 +7,23 @@ class PlaceRepository {
     private val places = db.collection("places")
 
     fun createPlace(place: Place) {
+
         places
             .document(place.placeId)
-            .set(place)
+            .set(
+                mapOf(
+                    "name" to place.name,
+                    "category" to place.category,
+                    "address" to place.address,
+                    "latitude" to place.latitude,
+                    "longitude" to place.longitude,
+                    "priceLevel" to place.priceLevel,
+                    "rating" to place.rating,
+                    "reviewCount" to place.reviewCount,
+                    "googleMapsUri" to place.googleMapsUri,
+                    "websiteUri" to place.websiteUri
+                )
+            )
             .get()
     }
 
@@ -25,7 +39,7 @@ class PlaceRepository {
         }
 
         return Place(
-            placeId = document.getString("placeId") ?: document.id,
+            placeId = document.id,
             name = document.getString("name") ?: "",
             category = document.getString("category") ?: "",
             address = document.getString("address") ?: "",
@@ -48,7 +62,7 @@ class PlaceRepository {
         return result.documents.map { document ->
 
             Place(
-                placeId = document.getString("placeId") ?: document.id,
+                placeId = document.id,
                 name = document.getString("name") ?: "",
                 category = document.getString("category") ?: "",
                 address = document.getString("address") ?: "",
@@ -67,7 +81,20 @@ class PlaceRepository {
 
         places
             .document(place.placeId)
-            .set(place)
+            .set(
+                mapOf(
+                    "name" to place.name,
+                    "category" to place.category,
+                    "address" to place.address,
+                    "latitude" to place.latitude,
+                    "longitude" to place.longitude,
+                    "priceLevel" to place.priceLevel,
+                    "rating" to place.rating,
+                    "reviewCount" to place.reviewCount,
+                    "googleMapsUri" to place.googleMapsUri,
+                    "websiteUri" to place.websiteUri
+                )
+            )
             .get()
     }
 
