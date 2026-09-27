@@ -1,5 +1,6 @@
 package android_app
 
+<<<<<<< HEAD
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
 import java.io.OutputStream
@@ -41,3 +42,16 @@ private fun sendResponse(exchange: HttpExchange, responseText: String) {
     os.write(bytes)
     os.close()
 }
+=======
+import android.app.Application
+
+/**
+ * Lớp Application đại diện cho toàn bộ ứng dụng Android Native Du Lịch.
+ */
+class TravelApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        // Khởi tạo các cấu hình toàn cục nếu cần
+    }
+}
+>>>>>>> 734c911 (feat: Implement Travel App UI with Jetpack Compose & Material 3)
